@@ -49,11 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\CommandManager\GiveForm.cs">
+    <Compile Include="Components\CommandManager\BaseCommandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\CommandManager\GiveForm.Designer.cs">
-      <DependentUpon>GiveForm.cs</DependentUpon>
+    <Compile Include="Components\CommandManager\BaseCommandForm.Designer.cs">
+      <DependentUpon>BaseCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CommandManager\GiveCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\CommandManager\GiveCommandForm.Designer.cs">
+      <DependentUpon>GiveCommandForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\EntityManager\EntityForm.cs">
       <SubType>Form</SubType>
@@ -67,10 +73,26 @@
     <Compile Include="Components\EntityManager\EntityCreateForm.Designer.cs">
       <DependentUpon>EntityCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\MCForm.cs">
+    <Compile Include="Controls\Selector\RangeSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Selector\RangeSelectorControl.Designer.cs">
+      <DependentUpon>RangeSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Selector\BaseSelectorAttribute.cs" />
+    <Compile Include="Core\Selector\BaseSelectorRangeAttribute.cs" />
+    <Compile Include="Core\Selector\CMSelector.cs" />
+    <Compile Include="Core\Selector\ICMSelectorAttribute.cs" />
+    <Compile Include="Core\Selector\ICMSelectorRangeAttribute.cs" />
+    <Compile Include="Core\Selector\ISelectorAttributeRange.cs" />
+    <Compile Include="Core\Selector\RangeSelector.cs" />
+    <Compile Include="Core\Selector\ZSelector.cs" />
+    <Compile Include="Core\Selector\YSelector.cs" />
+    <Compile Include="Core\Selector\XSelector.cs" />
+    <Compile Include="MCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\MCForm.Designer.cs">
+    <Compile Include="MCForm.Designer.cs">
       <DependentUpon>MCForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\AttributeEditor.cs">
@@ -97,16 +119,15 @@
     <Compile Include="Controls\MCUserControl.Designer.cs">
       <DependentUpon>MCUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MinecraftSelector.cs">
+    <Compile Include="MinecraftSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\MinecraftSelector.Designer.cs">
+    <Compile Include="MinecraftSelector.Designer.cs">
       <DependentUpon>MinecraftSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NumberBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Core\CMSelector.cs" />
     <Compile Include="Core\Colors.cs" />
     <Compile Include="Core\MCData.cs" />
     <Compile Include="Core\Util.cs" />
@@ -118,8 +139,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Components\CommandManager\GiveForm.resx">
-      <DependentUpon>GiveForm.cs</DependentUpon>
+    <EmbeddedResource Include="Components\CommandManager\BaseCommandForm.resx">
+      <DependentUpon>BaseCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CommandManager\GiveCommandForm.resx">
+      <DependentUpon>GiveCommandForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\EntityManager\EntityForm.resx">
       <DependentUpon>EntityForm.cs</DependentUpon>
@@ -127,7 +151,10 @@
     <EmbeddedResource Include="Components\EntityManager\EntityCreateForm.resx">
       <DependentUpon>EntityCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\MCForm.resx">
+    <EmbeddedResource Include="Controls\Selector\RangeSelectorControl.resx">
+      <DependentUpon>RangeSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCForm.resx">
       <DependentUpon>MCForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AttributeEditor.resx">
@@ -139,7 +166,7 @@
     <EmbeddedResource Include="Controls\EntitySelector.resx">
       <DependentUpon>EntitySelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\MinecraftSelector.resx">
+    <EmbeddedResource Include="MinecraftSelector.resx">
       <DependentUpon>MinecraftSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

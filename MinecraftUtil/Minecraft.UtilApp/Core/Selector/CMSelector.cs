@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minecraft.UtilApp.Core.Selector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,7 @@ namespace Minecraft.UtilApp.Core
 {
     public class CMSelector
     {
-        public Dictionary<string, string> Attributes { get; private set; }
-
+        public List<ICMSelectorAttribute> Attributes { get; private set; }
         public static List<CMSelector> Selectors => new List<CMSelector>() {
             new CMSelector("@p","@p 距离最近的玩家"),
             new CMSelector("@r","@r 随机玩家"),
@@ -25,12 +25,7 @@ namespace Minecraft.UtilApp.Core
         {
             Name = name;
             Describe = describe;
+            Attributes = new List<ICMSelectorAttribute>();
         }
-
-        public void SetAttribute(string key, string value)
-        {
-            Attributes.Update(key, value);
-        }
-
     }
 }

@@ -39,7 +39,7 @@ namespace Minecraft.UtilApp
         /// <param name="e"></param>
         private void giveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var giveForm = new GiveForm();
+            var giveForm = new GiveCommandForm();
             giveForm.ShowDialog();
         }
     }

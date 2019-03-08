@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Minecraft.UtilApp.Components.CommandManager
 {
-    public partial class GiveForm : MCForm
+    public partial class GiveCommandForm : BaseCommandForm
     {
-        public GiveForm()
+        public GiveCommandForm()
         {
             InitializeComponent();
+        }
+
+        public override void GetCommand()
+        {
+            CommandString = "test";
         }
     }
 }

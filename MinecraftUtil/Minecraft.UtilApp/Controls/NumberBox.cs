@@ -9,13 +9,18 @@ namespace Minecraft.UtilApp.Controls
 {
     public class NumberBox : TextBox
     {
-        public decimal Value
+        public decimal? Value
         {
-            get {
+            get
+            {
+                if (string.IsNullOrEmpty(Text))
+                    return null;
+
                 return Convert.ToDecimal(Text);
             }
 
-            set {
+            set
+            {
                 Text = value.ToString();
             }
         }
@@ -31,7 +36,7 @@ namespace Minecraft.UtilApp.Controls
             if (decimal.TryParse(box.Text, out v))
                 Text = v.ToString();
             else {
-                Text = "0";
+                Text = string.Empty;
             }
         }
     }
