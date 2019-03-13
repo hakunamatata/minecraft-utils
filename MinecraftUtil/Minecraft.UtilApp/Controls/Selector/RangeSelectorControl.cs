@@ -26,6 +26,7 @@ namespace Minecraft.UtilApp.Controls.Selector
                 lbTitle.Text = value;
             }
         }
+        public string AttributeKey { get; set; }
         public RangeSelector Attribute { get; private set; }
         public RangeSelectorControl()
         {
@@ -35,12 +36,12 @@ namespace Minecraft.UtilApp.Controls.Selector
         public RangeSelectorControl(string title, string attributeKey) : this()
         {
             Title = title;
-            Attribute = new RangeSelector(attributeKey);
-
+            AttributeKey = attributeKey;
         }
 
         private void RangeSelector_Load(object sender, EventArgs e)
         {
+            Attribute = new RangeSelector(AttributeKey);
         }
 
         private void nbValue_TextChanged(object sender, EventArgs e)

@@ -79,6 +79,7 @@
     <Compile Include="Controls\Selector\RangeSelectorControl.Designer.cs">
       <DependentUpon>RangeSelectorControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\IMCCommand.cs" />
     <Compile Include="Core\Selector\BaseSelectorAttribute.cs" />
     <Compile Include="Core\Selector\BaseSelectorRangeAttribute.cs" />
     <Compile Include="Core\Selector\CMSelector.cs" />
@@ -119,10 +120,10 @@
     <Compile Include="Controls\MCUserControl.Designer.cs">
       <DependentUpon>MCUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MinecraftSelector.cs">
+    <Compile Include="Controls\MinecraftSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MinecraftSelector.Designer.cs">
+    <Compile Include="Controls\MinecraftSelector.Designer.cs">
       <DependentUpon>MinecraftSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NumberBox.cs">
@@ -166,7 +167,7 @@
     <EmbeddedResource Include="Controls\EntitySelector.resx">
       <DependentUpon>EntitySelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MinecraftSelector.resx">
+    <EmbeddedResource Include="Controls\MinecraftSelector.resx">
       <DependentUpon>MinecraftSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

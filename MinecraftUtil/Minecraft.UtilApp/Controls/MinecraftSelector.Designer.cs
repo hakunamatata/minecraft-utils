@@ -37,9 +37,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAttr1 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.rangeSelectorControl3 = new Minecraft.UtilApp.Controls.Selector.RangeSelectorControl();
-            this.rangeSelectorControl2 = new Minecraft.UtilApp.Controls.Selector.RangeSelectorControl();
             this.rangeSelectorControl1 = new Minecraft.UtilApp.Controls.Selector.RangeSelectorControl();
+            this.rangeSelectorControl2 = new Minecraft.UtilApp.Controls.Selector.RangeSelectorControl();
+            this.rangeSelectorControl3 = new Minecraft.UtilApp.Controls.Selector.RangeSelectorControl();
             this.flowPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -163,29 +163,32 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(583, 343);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // rangeSelectorControl3
-            // 
-            this.rangeSelectorControl3.Location = new System.Drawing.Point(8, 76);
-            this.rangeSelectorControl3.Name = "rangeSelectorControl3";
-            this.rangeSelectorControl3.Size = new System.Drawing.Size(513, 34);
-            this.rangeSelectorControl3.TabIndex = 2;
-            this.rangeSelectorControl3.Title = "Z";
-            // 
-            // rangeSelectorControl2
-            // 
-            this.rangeSelectorControl2.Location = new System.Drawing.Point(8, 42);
-            this.rangeSelectorControl2.Name = "rangeSelectorControl2";
-            this.rangeSelectorControl2.Size = new System.Drawing.Size(513, 28);
-            this.rangeSelectorControl2.TabIndex = 1;
-            this.rangeSelectorControl2.Title = "Y";
-            // 
             // rangeSelectorControl1
             // 
+            this.rangeSelectorControl1.AttributeKey = "x";
             this.rangeSelectorControl1.Location = new System.Drawing.Point(8, 8);
             this.rangeSelectorControl1.Name = "rangeSelectorControl1";
             this.rangeSelectorControl1.Size = new System.Drawing.Size(513, 28);
             this.rangeSelectorControl1.TabIndex = 0;
             this.rangeSelectorControl1.Title = "X";
+            // 
+            // rangeSelectorControl2
+            // 
+            this.rangeSelectorControl2.AttributeKey = "y";
+            this.rangeSelectorControl2.Location = new System.Drawing.Point(8, 42);
+            this.rangeSelectorControl2.Name = "rangeSelectorControl2";
+            this.rangeSelectorControl2.Size = new System.Drawing.Size(544, 28);
+            this.rangeSelectorControl2.TabIndex = 1;
+            this.rangeSelectorControl2.Title = "Y";
+            // 
+            // rangeSelectorControl3
+            // 
+            this.rangeSelectorControl3.AttributeKey = "z";
+            this.rangeSelectorControl3.Location = new System.Drawing.Point(8, 76);
+            this.rangeSelectorControl3.Name = "rangeSelectorControl3";
+            this.rangeSelectorControl3.Size = new System.Drawing.Size(513, 34);
+            this.rangeSelectorControl3.TabIndex = 2;
+            this.rangeSelectorControl3.Title = "Z";
             // 
             // MinecraftSelector
             // 

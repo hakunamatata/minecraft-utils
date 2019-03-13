@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minecraft.UtilApp.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Minecraft.UtilApp.Components.CommandManager
 {
-    public partial class BaseCommandForm : MCForm
+    public partial class BaseCommandForm : MCForm, IMCCommand
     {
         public string CommandString
         {
@@ -23,6 +24,9 @@ namespace Minecraft.UtilApp.Components.CommandManager
                 textBoxCommand.Text = value;
             }
         }
+
+        public string Pattern { get; set; }
+
         public BaseCommandForm()
         {
             InitializeComponent();
