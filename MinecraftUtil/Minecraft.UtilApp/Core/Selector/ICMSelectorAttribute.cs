@@ -9,8 +9,10 @@ namespace Minecraft.UtilApp.Core.Selector
     public interface ICMSelectorAttribute
     {
 
-        string SelecetorName { get; }
+        string SelectorName { get; }
         string SelectorValue { get; set; }
         bool OperationEqual { get; }
+
+        string Render();
     }
 }

@@ -10,7 +10,7 @@ namespace Minecraft.UtilApp.Core.Selector
     {
         public BaseSelectorRangeAttribute(string name)
         {
-            SelecetorName = name;
+            SelectorName = name;
             SelectorValue = string.Empty;
         }
 
@@ -18,7 +18,7 @@ namespace Minecraft.UtilApp.Core.Selector
 
         public decimal? MinValue { get; set; } = null;
 
-        public string SelecetorName { get; private set; }
+        public string SelectorName { get; private set; }
 
         public string SelectorValue { get; set; }
 
@@ -26,12 +26,22 @@ namespace Minecraft.UtilApp.Core.Selector
 
         public abstract string GetAttributeString();
 
+        public string Render()
+        {
+            if (string.IsNullOrEmpty(SelectorValue)) {
+                return $"{SelectorName}={MinValue},{SelectorName}m={MaxValue}";
+            }
+            else {
+                return $"{SelectorName}={(OperationEqual ? "" : "!")}{SelectorValue}";
+            }
+        }
+
         public override string ToString()
         {
             string attrString = GetAttributeString();
 
             if (!string.IsNullOrEmpty(attrString))
-                return $"{SelecetorName}{(OperationEqual ? "=" : "!=")}{attrString}";
+                return $"{SelectorName}{(OperationEqual ? "=" : "!=")}{attrString}";
             else {
                 if (MinValue == null) {
                     if (MaxValue == null) {
@@ -49,7 +59,7 @@ namespace Minecraft.UtilApp.Core.Selector
                         attrString = $"{MinValue.Value.ToString("#.##")}..{MaxValue.Value.ToString("#.##")}";
                     }
                 }
-                return $"{SelecetorName}{(OperationEqual ? "=" : "!=")}{attrString}";
+                return $"{SelectorName}{(OperationEqual ? "=" : "!=")}{attrString}";
             }
         }
     }

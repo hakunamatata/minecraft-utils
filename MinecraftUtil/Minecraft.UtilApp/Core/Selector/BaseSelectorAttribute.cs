@@ -8,7 +8,7 @@ namespace Minecraft.UtilApp.Core.Selector
 {
     public abstract class BaseSelectorAttribute : ICMSelectorAttribute
     {
-        public string SelecetorName { get; private set; }
+        public string SelectorName { get; private set; }
 
         public string SelectorValue { get; set; }
 
@@ -16,7 +16,7 @@ namespace Minecraft.UtilApp.Core.Selector
 
         public BaseSelectorAttribute(string name)
         {
-            SelecetorName = name;
+            SelectorName = name;
             SelectorValue = string.Empty;
         }
 
@@ -25,9 +25,14 @@ namespace Minecraft.UtilApp.Core.Selector
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(GetAttributeString()))
-                return $"{SelecetorName}{(OperationEqual ? "=" : "!=")}{GetAttributeString()}";
+                return $"{SelectorName}{(OperationEqual ? "=" : "!=")}{GetAttributeString()}";
 
             return string.Empty;
+        }
+
+        public string Render()
+        {
+            return $"{SelectorName}={(OperationEqual ? "" : "!")}{SelectorValue}";
         }
     }
 }
